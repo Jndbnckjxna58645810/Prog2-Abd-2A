@@ -1,0 +1,38 @@
+1. Line 12 is the last that definitely functions.
+
+2. [See listing]
+
+8:  team = std::vector of length -4245671, capacity 104638061053430946
+    teamSize = 32767
+9:  team = std::vector of length -4245671, capacity 104638061053430946
+    teamSize = 32767
+10: team = std::vector of length 2, capacity 2
+        [0] = "Paddy"
+        [1] = "Linda"
+    teamSize = 32767
+11: team = std::vector of length 3, capacity 3
+        [0] = "Paddy"
+        [1] = "Linda"
+        [2] = "Steve"
+    teamSize = 32767
+12: team = std::vector of length 4, capacity 4
+        [0] = "Paddy"
+        [1] = "Linda"
+        [2] = "Steve"
+        [3] = "Flo"
+    teamSize = 32767
+12: team = std::vector of length 4, capacity 4
+        [0] = "Paddy"
+        [1] = "Linda"
+        [2] = "Steve"
+        [3] = "Flo"
+    teamSize = 4
+
+3. [See main.cpp]
+    //Full Team - version for all members
+    cout << "Wir sind: ";
+    for (int i = 0; i < team.size(); i++) {
+        cout << team[i];
+        if (i != team.size() - 1) { cout << ", "; }
+        else { cout << "." << endl; }
+    }

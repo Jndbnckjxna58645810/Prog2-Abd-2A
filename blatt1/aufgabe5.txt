@@ -1,0 +1,28 @@
+Auf Deutsch.
+a) erste Fehlmeldung: Die Bezeichner "" team "" ist nicht definiert. Der fehler ist in main.cpp datei
+b) in Zeile 10
+c)bei diesen Code: cout << "Wir sind: " << team[0] << " ... " << team.at(teamSize) << endl;
+d) der Bezeichner ""team"" soll vorher predefiniert sein bevor es dann aufgerufen soll.
+
+2) Der code Kann nicht compieleirt werden, weil zuerste soll den bezeichner in Zeil 10 vor predefiniert, dann de Bezeichner "teamSize" sollte auch sollte auch definiert werden.
+
+
+in English
+1. First error:
+
+(a) main.cpp
+    [build] /mnt/c/Users/happy/Desktop/STUFF/TUBs/2026_Sommer/Programmieren_2/repo/Gruppe_Abd2A/blatt1/main.cpp: In function ‘int main()’:
+    ...
+(b) 10 [Line 10, Symbol 29]
+    [build] /mnt/c/Users/happy/Desktop/STUFF/TUBs/2026_Sommer/Programmieren_2/repo/Gruppe_Abd2A/blatt1/main.cpp:10:29: error: ‘team’ was not declared in this scope; did you mean ‘tm’?
+
+(c) Starting at "team[0]"
+    [build]    10 |     cout << "Wir sind: " << team[0] << "..." << team.at(teamSize) << endl;
+    [build]       |                             ^~~~
+    [build]       |                             tm
+
+(d) "error: ‘team’ was not declared in this scope; did you mean ‘tm’?"
+    [build] /mnt/c/Users/happy/Desktop/STUFF/TUBs/2026_Sommer/Programmieren_2/repo/Gruppe_Abd2A/blatt1/main.cpp:10:29: error: ‘team’ was not declared in this scope; did you mean ‘tm’?
+
+2. Team is being accessed before it was declared.
+

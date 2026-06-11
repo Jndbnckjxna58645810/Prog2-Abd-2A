@@ -1,0 +1,8 @@
+build/
+cmake-build*/
+.idea/
+.vscode/
+.vs/
+
+.DS_Store
+*:Zone.Identifier
