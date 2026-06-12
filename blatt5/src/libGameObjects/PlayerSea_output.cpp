@@ -44,11 +44,11 @@ namespace GameObjects {
     {
         stream << setw(2) << y << " |";
         for (unsigned int x = 0; x < Constants::seaSizeX; ++x) {
-            stream << gridOwnSea[y][x].output;
+            stream << gridOwnSea(x, y).output;
         }
         stream << spaceX;
         for (unsigned int x = 0; x < Constants::seaSizeX; ++x) {
-            stream << gridOtherSea[y][x].output;
+            stream << gridOtherSea(x, y).output;
         }
         stream << " | " << y << endl;
     }

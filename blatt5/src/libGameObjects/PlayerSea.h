@@ -9,6 +9,7 @@
 #include "Ship.h"
 #include "Missile.h"
 #include "Constants.h"
+#include "Grid2D.h"
 
 using std::ostream;
 
@@ -39,7 +40,7 @@ namespace GameObjects {
         bool receiveMissile(std::shared_ptr<Missile> missile);
 
         // TODO Aufgabe 5:
-        OutputGrid gridOwnSea = OutputGrid(Constants::seaSizeY, std::vector<OutputGridCell>(Constants::seaSizeX));
+        OutputGrid gridOwnSea = OutputGrid(Constants::seaSizeX, Constants::seaSizeY, OutputGridCell());
         OutputGrid gridOtherSea = gridOwnSea;
 
     public:

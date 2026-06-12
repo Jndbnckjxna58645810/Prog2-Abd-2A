@@ -19,7 +19,7 @@ namespace GameObjects {
     : playerName(newPlayerName)
     {
         // TODO Aufgabe 5:
-        std::cout << gridOwnSea[0].size() << "x" << gridOwnSea.size() << " Spielfeld von " << newPlayerName << " bereit." << std::endl;
+        std::cout << gridOwnSea.sizeX() << "x" << gridOwnSea.sizeY() << " Spielfeld von " << newPlayerName << " bereit." << std::endl;
     }
 
     string const & PlayerSea::getPlayerName() const

@@ -49,7 +49,7 @@ namespace GameObjects {
 
     void Missile::output(OutputGrid & grid) const
     {
-        auto & gridCell = grid[y][x];
+        auto & gridCell = grid(x, y);
         stringstream stream;
         if (hit) {
             gridCell.missiles += 1;

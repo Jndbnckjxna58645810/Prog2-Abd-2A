@@ -52,8 +52,8 @@ namespace GameObjects {
     {
         for (unsigned int i = 0; i < size; ++i) {
             auto & cell = (orientation == Sea::Orientation::X)
-                    ? grid[y][x + i]
-                    : grid[y + i][x];
+                    ? grid(x + i, y)
+                    : grid(x, y + i);
             cell.ship = true;
             cell.output = " X  ";
         }

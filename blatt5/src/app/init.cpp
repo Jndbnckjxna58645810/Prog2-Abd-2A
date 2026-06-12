@@ -26,11 +26,9 @@ using GameObjects::PlayerSea;
 #include "utils.h"
 using Utils::n_endl;
 
-
 unsigned int const Constants::seaSizeX = 5;
 unsigned int const Constants::seaSizeY = 5;
 vector<unsigned int> const Constants::shipSizes = { 1, 2 };
-
 
 void initializePlayerSeasWithShips(vector<PlayerSea> & playerSeas)
 {
