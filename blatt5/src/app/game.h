@@ -19,9 +19,8 @@ void selectTypeAndSendMissile(GameObjects::PlayerSea & currentPlayerSea, GameObj
 // TODO Aufgabe 2:
 //  Die 3 Funktionen `send___Missile(..)` unterscheiden sich nur durch den Typ der jeweils erzeugten Rakete (`Missile`, `TumblingMissile`, oder `DoubleMissile`) und den Parameter `missileType` für `inputMissileTargetCoordinates(..)`.
 //  Ersetzt diese 3 Funktionen durch eine einzige Funktion `sendMissile<MissileType>(currentPlayerSea, otherPlayerSea)`, die den Raketentyp als Template-Parameter erhält.
-bool sendRegularMissile(GameObjects::PlayerSea & currentPlayerSea, GameObjects::PlayerSea & otherPlayerSea);
-bool sendTumblingMissile(GameObjects::PlayerSea & currentPlayerSea, GameObjects::PlayerSea & otherPlayerSea);
-bool sendDoubleMissile(GameObjects::PlayerSea & currentPlayerSea, GameObjects::PlayerSea & otherPlayerSea);
+template <typename T>
+bool sendMissile(GameObjects::PlayerSea & currentPlayerSea, GameObjects::PlayerSea & otherPlayerSea);
 
 Sea::Coordinates inputMissileTargetCoordinates(GameObjects::PlayerSea const & currentPlayerSea, std::string const & missileType);
 

@@ -67,34 +67,14 @@ void selectTypeAndSendMissile(PlayerSea & currentPlayerSea, PlayerSea & otherPla
     switch (round % 3) {
         // TODO Aufgabe 2:
         //  Ersetzt die Funktionsaufrufe von `send___Missile(..)` durch Aufrufe der Template-Funktion `sendMissile<___>(...)`.
-        case 2: hit = sendTumblingMissile(currentPlayerSea, otherPlayerSea); break;
-        case 1: hit = sendDoubleMissile(currentPlayerSea, otherPlayerSea); break;
-        default: hit = sendRegularMissile(currentPlayerSea, otherPlayerSea);
+        case 2: hit = sendMissile<GameObjects::TumblingMissile>(currentPlayerSea, otherPlayerSea); break;
+        case 1: hit = sendMissile<GameObjects::DoubleMissile>(currentPlayerSea, otherPlayerSea); break;
+        default: hit = sendMissile<GameObjects::Missile>(currentPlayerSea, otherPlayerSea);
     }
     cout << n_endl(2) << (hit ? "Treffer!" : "Daneben!") << endl << string(80, '=') << endl;
 }
 
 // TODO Aufgabe 2:
-bool sendRegularMissile(PlayerSea & currentPlayerSea, PlayerSea & otherPlayerSea)
-{
-    Coordinates targetCoordinates = inputMissileTargetCoordinates(currentPlayerSea, Missile::getName());
-    auto missile = make_shared<Missile>(targetCoordinates);
-    return currentPlayerSea.sendMissileTo(otherPlayerSea, missile);
-}
-
-bool sendTumblingMissile(PlayerSea & currentPlayerSea, PlayerSea & otherPlayerSea)
-{
-    Coordinates targetCoordinates = inputMissileTargetCoordinates(currentPlayerSea, TumblingMissile::getName());
-    auto missile = make_shared<TumblingMissile>(targetCoordinates);
-    return currentPlayerSea.sendMissileTo(otherPlayerSea, missile);
-}
-
-bool sendDoubleMissile(PlayerSea & currentPlayerSea, PlayerSea & otherPlayerSea)
-{
-    Coordinates targetCoordinates = inputMissileTargetCoordinates(currentPlayerSea, DoubleMissile::getName());
-    auto missile = make_shared<DoubleMissile>(targetCoordinates);
-    return currentPlayerSea.sendMissileTo(otherPlayerSea, missile);
-}
 
 Coordinates inputMissileTargetCoordinates(PlayerSea const & currentPlayerSea, std::string const & missileType)
 {
