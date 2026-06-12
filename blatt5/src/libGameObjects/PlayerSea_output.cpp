@@ -20,27 +20,6 @@ namespace GameObjects {
     unsigned int const seaCellSizeX = 4;
 
     // TODO Aufgabe 1:
-    ostream & operator<<(ostream & stream, n_endl const & n) {
-        stream << endl;
-        printHeader(cout);
-        for (unsigned int y = 0; y < Constants::seaSizeY; ++y) {
-            printLine(cout, y);
-        }
-        printHorizontalBorder(cout);
-        cout << endl;
-        return stream;
-    }
-
-    void PlayerSea::print() const
-    {
-        cout << endl;
-        printHeader(cout);
-        for (unsigned int y = 0; y < Constants::seaSizeY; ++y) {
-            printLine(cout, y);
-        }
-        printHorizontalBorder(cout);
-        cout << endl;
-    }
 
     void PlayerSea::printHeader(ostream & stream) const
     {
@@ -81,10 +60,17 @@ namespace GameObjects {
                << endl;
     }
 
-}
+    // TODO Aufgabe 1:
+    //  Implementiert hier `operator<<`.
+    ostream & operator<<(ostream & stream, const PlayerSea & playerSea) {
+        stream << endl;
+        playerSea.printHeader(stream);
+        for (unsigned int y = 0; y < Constants::seaSizeY; ++y) {
+            playerSea.printLine(stream, y);
+        }
+        playerSea.printHorizontalBorder(stream);
+        stream << endl;
+        return stream;
+    }
 
-// TODO Aufgabe 1:
-//  Implementiert hier `operator<<`.
-/*
- ???
- */
+}

@@ -1,7 +1,6 @@
 #ifndef BLATT5_PLAYERSEA_H
 #define BLATT5_PLAYERSEA_H
 
-
 #include <string>
 #include <vector>
 #include <memory>
@@ -10,6 +9,8 @@
 #include "Ship.h"
 #include "Missile.h"
 #include "Constants.h"
+
+using std::ostream;
 
 namespace GameObjects {
     class PlayerSea; // Das ist eine sogenannte `forward declaration`.
@@ -23,9 +24,9 @@ namespace GameObjects {
 // TODO Aufgabe 1:
 //  Deklariert eine Überladung für `operator<<(stream, playerSea)` so, dass `PlayerSea`-Instanzen einfach direkt per `cout << playerSea` ausgegeben werden können.
 //  Tipp: Siehe `Coordinates.h`
-/*
- ???
- */
+namespace GameObjects {
+    ostream & operator<<(ostream & stream, const GameObjects::PlayerSea & playerSea);
+}
 
 namespace GameObjects {
 
@@ -67,7 +68,7 @@ namespace GameObjects {
         //  Entfernt die Funktion `print()` und fügt stattdessen eine `friend` Deklaration für `::operator<<` hinzu.
         //  Hinweis: Da die Klasse in einem Namespace definiert ist, gelten auch `friend` Deklarationen für entsprechende Funktionen/Klassen im selben Namespace.
         //           Um innerhalb eines Namespaces in den "globalen" Namespace zu verweisen, kann der Scope-Resolution-Operator ohne Angabe eines Namespaces verwendet werden.
-        void print() const;
+        friend ostream & operator<<(ostream & stream, const PlayerSea & playerSea);
 
     private:
         void printHeader(std::ostream & stream) const;

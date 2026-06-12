@@ -50,7 +50,7 @@ bool gameTurn(PlayerSea & currentPlayerSea, PlayerSea & otherPlayerSea, unsigned
 {
     // TODO Aufgabe 1:
     cout << "Runde " << round << endl;
-    currentPlayerSea.print();
+    cout << currentPlayerSea << endl;
 
     selectTypeAndSendMissile(currentPlayerSea, otherPlayerSea, round);
 
@@ -116,7 +116,7 @@ bool checkGameFinished(PlayerSea const & currentPlayerSea, PlayerSea const & oth
         // TODO Aufgabe 1:
         cout << "Das letzte Schiff von " << otherPlayerSea.getPlayerName() << " ist versenkt. "
              << currentPlayerSea.getPlayerName() << " hat gewonnen." << endl;
-        currentPlayerSea.print();
+        cout << currentPlayerSea << endl;
         return true;
     }
     return false;

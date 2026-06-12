@@ -2,7 +2,7 @@
 //  Entfernt die Kommentar-Zeichen (//) für Aufgaben, die erledigt sind und getestet werden sollen:
 
 
-//#define TEST_AUFGABE_1 // TODO Aufgabe 1
+#define TEST_AUFGABE_1 // TODO Aufgabe 1
 //#define TEST_AUFGABE_3 // TODO Aufgabe 3
 //#define TEST_AUFGABE_4 // TODO Aufgabe 4
 
