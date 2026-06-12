@@ -26,21 +26,20 @@ namespace Sea {
         // TODO Aufgabe 3:
         //  Erstellt zwei Methoden `sizeX()` und `sizeY()`.
         //  Sie sollen jeweils die Größe in X- bzw. Y-Richtung zurückgeben.
-        int sizeX() const;
-        int sizeY() const;
+        unsigned int sizeX() const;
+        unsigned int sizeY() const;
         // TODO Aufgabe 4:
         //  Überladet den `operator[]` so, dass er ein `Coordinates`-Element als Parameter erhält und eine Referenz auf das entsprechende Element zurückgibt.
         //  Instanzen von Grid2D sollen dann wie folgt verwendet werden können: `Coordinates c(3, 4); gridVariable[c] = ...`
         //  Erstellt zwei Varianten: einmal mit und einmal ohne `const` (Rückgabewert und Funktion).
-        //  vector<T> const & operator[](Coordinates const & coordinates);
+        T & operator[](Coordinates const & coordinates);
+        const T & operator[](Coordinates const & coordinates) const;
         // TODO Aufgabe 4:
         //  Überladet den `operator()` so, dass er X- und Y-Koordinaten als einzelne ganzzahlige Parameter erhält und eine Referenz auf das entsprechende Element zurückgibt.
         //  Instanzen von Grid2D sollen dann wie folgt verwendet werden können: `gridVariable(x, y) = ...` bzw. `gridVariable(3, 4) = ...`
         //  Erstellt zwei Varianten: einmal mit und einmal ohne `const` (Rückgabewert und Funktion).
-        /*
-         ???
-         */
-
+        T & operator()(unsigned int x, unsigned int y);
+        const T & operator()(unsigned int x, unsigned int y) const;
         // (TODO Aufgabe 6:)
         //   Warum werden von den Operatoren sowohl Varianten mit als auch ohne `const` benötigt?
         //
