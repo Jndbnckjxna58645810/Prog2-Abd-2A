@@ -43,11 +43,16 @@ namespace Sea {
         // (TODO Aufgabe 6:)
         //   Warum werden von den Operatoren sowohl Varianten mit als auch ohne `const` benötigt?
         //
-        //   ???
-        //
-        //
-        //
-
+        // Die beiden unterschiedlichen Varianten (mit und ohne const) werden benötigt,
+        // um die konstante Korrektheit (Const-Correctness) der Klasse zu garantieren.
+        // 
+        // 1. Die Variante OHNE const ermöglicht den schreibenden Zugriff auf die 
+        //    Grid-Elemente eines veränderbaren Objekts (Rückgabe einer normalen Referenz T&).
+        // 
+        // 2. Die Variante MIT const wird zwingend benötigt, wenn das Grid-Objekt selbst 
+        //    als 'const' deklariert ist. Da der Operator selbst als const markiert ist, 
+        //    garantiert er, das Grid nicht zu verändern, und gibt folglich auch nur eine 
+        //    schreibgeschützte Referenz (const T&) auf das Element zurück.
     };
 }
 
