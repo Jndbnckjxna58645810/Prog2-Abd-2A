@@ -21,6 +21,7 @@ using std::random_device;
 using std::mt19937;
 using std::uniform_int_distribution;
 #include <queue>
+#include <sstream>
 
 #include "Coordinates.h"
 using Sea::Coordinates;
@@ -73,22 +74,46 @@ unsigned int getStartingPlayerIdx(string const & playerName0, string const & pla
     // TODO Aufgabe 3:
     //  Vergleicht hier die beiden Listen von Augenzahlen (nums0, nums1), wie im Aufgabenblatt angegeben.
     //  Hinweis: Auch die Funktion `getPlayerRandomNumbers(..)` darf dazu angepasst werden.
-    for (int i = 0; i < 10; ++i) {
+    int cellSize = playerName0.length() > playerName1.length() ? playerName0.length() + 2 : playerName1.length() + 2;
+    if (cellSize < 12) cellSize = 12;
+    
+    cout << setw(5) << left << "Schr." 
+         << setw(cellSize) << left << playerName0 
+         << setw(cellSize) << left << playerName1 
+         << "Ergebnis" << endl;
+         
+    cout << string(5 + cellSize * 2 + 10, '-') << endl;
+
+    unsigned int winnerIdx = 0;
+
+    for (int i = 0; !nums0.empty() && !nums1.empty(); ++i) {
         auto num0 = nums0.top();
         auto num1 = nums1.top();
-        cout << "Vergleich " << (i + 1) << ": " << num0 << " vs. " << num1 << endl;
+
+        cout << setw(5) << left << i + 1 
+             << setw(cellSize) << left << num0 
+             << setw(cellSize) << left << num1;
+
         if (num0 > num1) {
-            cout << playerName0 << " beginnt." << n_endl(2);
-            return 0;
+            cout << playerName0 << " gewinnt" << endl;
+            winnerIdx = 0;
+            break;
+        } 
+        else if (num1 > num0) {
+            cout << playerName1 << " gewinnt" << endl;
+            winnerIdx = 1;
+            break;
+        } 
+        else {
+            cout << "Gleichstand" << endl;
         }
-        if (num1 > num0) {
-            cout << playerName1 << " beginnt." << n_endl(2);
-            return 1;
-        }
+
         nums0.pop();
         nums1.pop();
     }
-    return 0;
+
+    cout << endl;
+    return winnerIdx;
 }
 
 
