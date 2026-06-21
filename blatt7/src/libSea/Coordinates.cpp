@@ -41,9 +41,10 @@ namespace Sea {
 
     // TODO Aufgabe 2:
     //  Definiert hier den `operator<`.
-    /*
-     ???
-     */
+    bool Coordinates::operator<(Coordinates const & otherCoordinates) const
+    {
+        return x < otherCoordinates.x || (x == otherCoordinates.x && y < otherCoordinates.y);
+    }
 
 }
 

@@ -17,7 +17,7 @@ namespace GameObjects {
     private:
         // TODO Aufgabe 2:
         //  Ersetzt hier den vector-Typ der Variablen `missileHitPositions` durch ein `std::set`.
-        std::vector<Coordinates> missileHitPositions;
+        std::set<Coordinates> missileHitPositions;
 
         bool wasHitAt(Sea::Coordinates coordinates) const;
 

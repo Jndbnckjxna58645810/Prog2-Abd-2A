@@ -25,7 +25,7 @@ namespace GameObjects {
                     : Coordinates(x, y + i);
             if (missile.checkHit(shipHitPosition)) {
                 // TODO Aufgabe 2:
-                missileHitPositions.push_back(shipHitPosition);
+                missileHitPositions.insert(shipHitPosition);
             }
         }
     }
@@ -34,15 +34,7 @@ namespace GameObjects {
     {
         // TODO Aufgabe 2:
         //  Der Test, ob das Schiff versenkt wurde, ist nun mit einem einzelnen Vergleich möglich.
-        for (unsigned int i = 0; i < size; ++i) {
-            Coordinates coordinates = (orientation == Sea::Orientation::X)
-                    ? Coordinates(x + i, y)
-                    : Coordinates(x, y + i);
-            if (!wasHitAt(coordinates)) {
-                return false;
-            }
-        }
-        return true;
+        return missileHitPositions.size() >= size;
     }
 
     bool Ship::wasHitAt(Sea::Coordinates coordinates) const

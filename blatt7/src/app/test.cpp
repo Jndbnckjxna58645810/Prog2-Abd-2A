@@ -3,7 +3,7 @@
 
 
 #define TEST_AUFGABE_1 // TODO Aufgabe 1
-//#define TEST_AUFGABE_2 // TODO Aufgabe 2
+#define TEST_AUFGABE_2 // TODO Aufgabe 2
 
 
 #include "test.h"

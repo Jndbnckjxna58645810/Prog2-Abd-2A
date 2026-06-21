@@ -7,7 +7,7 @@ else()
     add_compile_options(-Wall -Wextra -pedantic)
 endif()
 
-# add_compile_definitions(EXERCISE_SKIP_WAITING)
-# add_compile_definitions(EXERCISE_SKIP_PLAYER_INIT)
+add_compile_definitions(EXERCISE_SKIP_WAITING)
+add_compile_definitions(EXERCISE_SKIP_PLAYER_INIT)
 
 add_subdirectory(src)

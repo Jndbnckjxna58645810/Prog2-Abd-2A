@@ -26,9 +26,7 @@ namespace Sea {
 
         // TODO Aufgabe 2:
         //  Deklariert hier den `operator<`, um `Coordinates` miteinander vergleichbar zu machen.
-        /*
-         ???
-         */
+        bool operator<(Coordinates const & otherCoordinates) const;
     };
 
 }
