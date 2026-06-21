@@ -4,6 +4,7 @@
 
 #include <string>
 #include <vector>
+#include <queue>
 
 #include "Coordinates.h"
 
@@ -18,7 +19,7 @@ unsigned int startGame(std::string const & playerName0, std::string const & play
 
 unsigned int getStartingPlayerIdx(std::string const & playerName0, std::string const & playerName1);
 
-std::vector<unsigned int> getPlayerRandomNumbers(std::string const & playerName);
+std::priority_queue<unsigned int> getPlayerRandomNumbers(std::string const & playerName);
 
 unsigned int getRandomNumber();
 

@@ -20,6 +20,7 @@ using msec = std::chrono::milliseconds;
 using std::random_device;
 using std::mt19937;
 using std::uniform_int_distribution;
+#include <queue>
 
 #include "Coordinates.h"
 using Sea::Coordinates;
@@ -72,18 +73,33 @@ unsigned int getStartingPlayerIdx(string const & playerName0, string const & pla
     // TODO Aufgabe 3:
     //  Vergleicht hier die beiden Listen von Augenzahlen (nums0, nums1), wie im Aufgabenblatt angegeben.
     //  Hinweis: Auch die Funktion `getPlayerRandomNumbers(..)` darf dazu angepasst werden.
+    for (int i = 0; i < 10; ++i) {
+        auto num0 = nums0.top();
+        auto num1 = nums1.top();
+        cout << "Vergleich " << (i + 1) << ": " << num0 << " vs. " << num1 << endl;
+        if (num0 > num1) {
+            cout << playerName0 << " beginnt." << n_endl(2);
+            return 0;
+        }
+        if (num1 > num0) {
+            cout << playerName1 << " beginnt." << n_endl(2);
+            return 1;
+        }
+        nums0.pop();
+        nums1.pop();
+    }
     return 0;
 }
 
 
-vector<unsigned int> getPlayerRandomNumbers(string const & playerName)
+std::priority_queue<unsigned int> getPlayerRandomNumbers(string const & playerName)
 {
     cout << playerName << " laesst die Wuerfel rollen ..." << endl;
-    vector<unsigned int> nums;
+    std::priority_queue<unsigned int> nums;
     for (auto i = 0; i < 10; ++i) {
         sleep_for(msec(i * i * 10));
         auto num = getRandomNumber();
-        nums.push_back(num);
+        nums.push(num);
         cout << num << " ";
     }
     cout << n_endl(2);
