@@ -9,7 +9,7 @@ Tutor:Wajd Abdallah
 
 |                | blatt1 | blatt2 | blatt3 | blatt4 | blatt5  | blatt6 | blatt7 | blatt8 | blatt9 |
 | ----------     |:------:|:------:|:------:|:------:|:-------:|:------:|:------:|:------:|:------:|
-|Polina Hryhorashchenko   |   12    |   33     |        |        |         |        |        |        |     |
-| Zidane Tawa Ngueguim |   0     |    0   |        |        |         |        |        |        |        |
-|  Luca Beinlich|   12     |     0  |        |        |         |        |        |        |        |
+|Polina Hryhorashchenko   |   12    |   33     |  32      |   24     | 34        |        |        |        |     |
+| Zidane Tawa Ngueguim |   0     |    0   |    29    |  24      | 0       |        |        |        |        |
+|  Luca Beinlich|   12     |     33  |   34     |    0    |    37     |        |        |        |        |
 
